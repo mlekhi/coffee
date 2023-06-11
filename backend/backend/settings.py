@@ -29,6 +29,8 @@ ALLOWED_HOSTS = []
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -106,8 +108,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
-
-OPENAI_API_KEY = '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'
 
 LANGUAGE_CODE = 'en-us'
 

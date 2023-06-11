@@ -44,7 +44,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000');
+      const response = await axios.post('http://127.0.0.1:8000', {prompt:'test'});
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
