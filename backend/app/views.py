@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def views(request):
-    return HttpResponse("Hello, Django!")
+    return HttpResponse("Amit is old!")
