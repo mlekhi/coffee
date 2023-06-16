@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app.views import views
+from app.views import scraping
 
 urlpatterns = [
     path('', views, name='home'),

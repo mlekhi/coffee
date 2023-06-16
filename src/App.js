@@ -1,4 +1,7 @@
 import './App.css';
+import './Fonts.css';
+import './Colours.css';
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -39,10 +42,24 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetchData();
+    newQuestion();
   }, []);
 
-  const fetchData = async () => {
+  const newQuestion = async () => {
+    try {
+      const response = await axios.post('http://127.0.0.1:8000', {prompt:'test'});
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      console.error('Error message:', error.message);
+    }
+  };
+
+  useEffect(() => {
+    stalk();
+  }, []);
+
+  const stalk = async () => {
     try {
       const response = await axios.post('http://127.0.0.1:8000', {prompt:'test'});
       setData(response.data);
@@ -64,7 +81,8 @@ function App() {
         ) : (
           <p>Loading...</p>
         )}
-        <button onClick={fetchData}>New Question</button>
+        <button onClick={newQuestion}>New Question</button>
+        <button onClick={stalk}>LinkedIn Stalk</button>
         <div className="menu-content">
           <button>Upvote</button>
           <button>Downvote</button>
