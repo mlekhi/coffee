@@ -31,9 +31,10 @@ def views(request):
 from linkedin_scraper import Person, actions
 from selenium import webdriver
 driver = webdriver.Chrome()
+driver.get("https://www.linkedin.com/in/maya-l/")
 
 def scraping():
     email = "some-email@email.address"
     password = "password123"
     actions.login(driver, email, password) # if email and password isnt given, it'll prompt in terminal
-    person = Person("https://www.linkedin.com/in/maya-l/", driver=driver)
+    person = Person("https://www.linkedin.com/in/maya-l/")

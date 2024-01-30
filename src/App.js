@@ -84,8 +84,7 @@ function App() {
         <button onClick={newQuestion}>New Question</button>
         <button onClick={stalk}>LinkedIn Stalk</button>
         <div className="menu-content">
-          <button>Upvote</button>
-          <button>Downvote</button>
+          <button>Like</button>
         </div>
       </header>
       <Footer />
